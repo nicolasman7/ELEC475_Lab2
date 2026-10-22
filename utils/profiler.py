@@ -89,6 +89,9 @@ class ModelProfiler:
             dummy = torch.randn(*self.input_size, device=self.device)
             self.model.eval()
             macs, _ = thop.profile(self.model, inputs=(dummy,), verbose=False)
+            for m in self.model.modules():
+                m._buffers.pop("total_ops", None)
+                m._buffers.pop("total_params", None)
             return int(macs), int(2 * macs)
         except Exception:
             pass
