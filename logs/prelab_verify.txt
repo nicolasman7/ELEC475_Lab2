@@ -1,0 +1,33 @@
+============================================================================
+ELEC 475: Lab 2 - Environment & Dataset Verification
+============================================================================
+
+[Step 1: PyTorch & GPU Acceleration Diagnostics]
+  PyTorch Version         : 2.14.1
+  Torchvision Version     : 0.29.1
+  CUDA GPU Available      : False
+  Warning: CUDA not detected. Training will run on CPU.
+  If using a machine without an NVIDIA GPU, use Google Colab with GPU runtime.
+
+[Step 2: CIFAR-10 Dataset Verification (Mandatory In-Lab Dataset)]
+  Checking / downloading CIFAR-10 to ./data/ ...
+  Train Samples           : 50,000 images (5,000 per class)
+  Test Samples            : 10,000 images (1,000 per class)
+  Sample Tensor Shape     : torch.Size([3, 64, 64]) --> Expected: torch.Size([3, 64, 64])
+  Sample Data Type        : torch.float32 --> Expected: torch.float32
+  Sample Value Range      : Min = 0.0039, Max = 0.9882 --> Expected: [0.0, 1.0]
+
+[Step 3: Mini-Batch DataLoader Pipeline Check]
+  Batch Tensor Shape      : torch.Size([64, 3, 64, 64]) --> Expected: torch.Size([64, 3, 64, 64])
+  Batch Labels Shape      : torch.Size([64]) --> Expected: torch.Size([64])
+
+[Step 4: Tiny ImageNet-200 Dataset Check]
+  Tiny ImageNet-200       : DETECTED in ./data/tiny-imagenet-200 (Verified).
+
+[Step 5: Exploratory Data Analysis (EDA) Artifact Check]
+  CIFAR-10 EDA Artifacts  : DETECTED in ./plots/ (All 3 plots present).
+  Tiny ImageNet EDA Plots : DETECTED in ./plots/ (All 3 plots present).
+
+============================================================================
+PRE-LAB VERIFICATION SUCCEEDED! YOU ARE FULLY READY FOR THE IN-LAB SESSION.
+============================================================================
